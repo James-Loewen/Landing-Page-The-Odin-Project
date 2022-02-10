@@ -1,19 +1,61 @@
 :root {
-  --drk-bg: #1F2937;
-  --hero-main-fc: #F9FAF8;
-  --hero-scnd-fc: #E5E7EB;
-  --btn-bg: #3882F6;
+  --bg-dark: #1F2937;
+  --fc-100: #F9FAF8;
+  --fc-200: #E5E7EB;
+  --bg-btn: #3882F6;
 }
 
-* {
-  padding: 0;
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
   margin: 0;
 }
 
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
 body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
   font-family: Roboto;
+  font-weight: 300;
   display: flex;
   flex-direction: column;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
 .container {
@@ -26,7 +68,7 @@ button {
   padding: 1rem 2rem;
   margin: 0;
   text-decoration: none;
-  background: var(--btn-bg);
+  background: var(--bg-btn);
   color: #ffffff;
   font-family: sans-serif;
   cursor: pointer;
@@ -59,18 +101,18 @@ ul {
 
 a {
   text-decoration: none;
-  color: var(--hero-scnd-fc);
+  color: var(--fc-200);
   font-size: 18px;
   font-weight: thin;
 }
 
 .sub-hero {
   font-size: 18px;
-  color: var(--hero-scnd-fc);
+  color: var(--fc-200);
 }
 
 .top {
-  background-color: var(--drk-bg);
+  background-color: var(--bg-dark);
 }
 
 .header {
@@ -83,7 +125,7 @@ a {
 .logo {
   /* font-family: Roboto; */
   font-size: 24px;
-  color: var(--hero-main-fc);
+  color: var(--fc-100);
 }
 
 .hero {
@@ -113,16 +155,30 @@ a {
 h1 {
   font-size: 48px;
   font-weight: 900;
-  color: var(--hero-main-fc);
+  color: var(--fc-100);
+  line-height: 1;
 }
 
+/* Information Section */
+
 .info {
-  padding-top: 16px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  color: var(--bg-dark);
+  background-color: white;
+}
+
+.info-head-text {
+  font-size: 32px;
+  font-weight: 900;
+  text-align: center;
 }
 
 .info-imgs {
   display: flex;
-  gap: 16px;
+  justify-content: center;
+  gap: 32px;
+  padding: 32px 0;
 }
 
 .img-block {
@@ -130,11 +186,77 @@ h1 {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 145px;
+  flex: 0 1 auto;
 }
 
 .blue-square {
-  width: 100px;
-  height: 100px;
-  border: solid var(--btn-bg) 3px;
+  width: 145px;
+  height: 145px;
+  border: solid var(--bg-btn) 3px;
   border-radius: 20px;
+}
+
+/* Quote Section */
+
+.quote {
+  background-color: var(--fc-200);
+  padding: 48px 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-text {
+  font-size: 36px;
+  color: var(--bg-dark);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.author {
+  font-size: 24px;
+  font-weight: 700;
+  padding-right: 32px;
+  align-self: flex-end;
+}
+
+/* Action Section */
+
+.action {
+  padding: 48px 250px;
+}
+
+.action-card {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bg-btn);
+  padding: 32px 96px;
+  border-radius: 10px;
+}
+
+.action h3,
+.action p {
+  color: var(--fc-100);
+}
+
+.action h3 {
+  font-weight: 700;
+}
+
+.action button {
+  border: solid var(--fc-100) 2px;
+  border-radius: 10px;
+  padding: 8px 16px;
+}
+
+/* Footer */
+
+.footer {
+  padding: 24px 0;
+  text-align: center;
+  background-color: var(--bg-dark);
+}
+
+.footer p {
+  color: var(--fc-200);
 }
